@@ -2,13 +2,12 @@ name: Keep M.O.M. awake
 
 on:
   schedule:
-      - cron: '*/10 * * * *'
-        workflow_dispatch:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
 
-        jobs:
-          ping:
-              runs-on: ubuntu-latest
-                  steps:
-                        - name: Ping Render service
-                                run: curl -fsS -o /dev/null -w "HTTP %{http_code}\n" https://mom-discord-bot.onrender.com
-                                
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render service
+        run: curl -fsS -o /dev/null -w "HTTP %{http_code}\n" https://mom-discord-bot.onrender.com
