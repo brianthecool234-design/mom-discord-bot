@@ -1,1 +1,518 @@
-import base64; exec(base64.b64decode("CmltcG9ydCBvcwppbXBvcnQgc3FsaXRlMwpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSwgdGltZWRlbHRhLCB0aW1lem9uZQoKaW1wb3J0IGRpc2NvcmQKZnJvbSBkaXNjb3JkIGltcG9ydCBhcHBfY29tbWFuZHMKZnJvbSBkaXNjb3JkLmV4dCBpbXBvcnQgY29tbWFuZHMsIHRhc2tzCmZyb20gZG90ZW52IGltcG9ydCBsb2FkX2RvdGVudgoKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQojIE0uTy5NLiAtIE1BTkFHRU1FTlQgT0YgTUlTU0lORyBBU1NJR05NRU5UUwojIFZlcnNpb24gMS4wCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCiMgLS0tLS0tLS0tLS0tLS0tLSBDT05GSUdVUkFUSU9OIC0tLS0tLS0tLS0tLS0tLS0KCmxvYWRfZG90ZW52KCkKClRPS0VOID0gb3MuZ2V0ZW52KCJESVNDT1JEX1RPS0VOIikKT1dORVJfSUQgPSBpbnQob3MuZ2V0ZW52KCJPV05FUl9JRCIsICIwIikpCkdVSUxEX0lEID0gaW50KG9zLmdldGVudigiR1VJTERfSUQiLCAiMCIpKQoKTVlBTk1BUl9UWiA9IHRpbWV6b25lKHRpbWVkZWx0YShob3Vycz02LCBtaW51dGVzPTMwKSkKCkRCX1BBVEggPSAiZGF0YWJhc2UvaG9tZXdvcmsuZGIiCgpvcy5tYWtlZGlycygiZGF0YWJhc2UiLCBleGlzdF9vaz1UcnVlKQoKIyAtLS0tLS0tLS0tLS0tLS0tIERBVEFCQVNFIC0tLS0tLS0tLS0tLS0tLS0KCmRlZiBpbml0X2RhdGFiYXNlKCk6CiAgICB3aXRoIHNxbGl0ZTMuY29ubmVjdChEQl9QQVRIKSBhcyBkYjoKICAgICAgICBkYi5leGVjdXRlKCIiIgogICAgICAgICAgICBDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBob21ld29yayAoCiAgICAgICAgICAgICAgICBpZCBJTlRFR0VSIFBSSU1BUlkgS0VZIEFVVE9JTkNSRU1FTlQsCiAgICAgICAgICAgICAgICBzdWJqZWN0IFRFWFQgTk9UIE5VTEwsCiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiBURVhUIE5PVCBOVUxMLAogICAgICAgICAgICAgICAgZGVhZGxpbmUgVEVYVCBOT1QgTlVMTCwKICAgICAgICAgICAgICAgIGNoYW5uZWxfaWQgSU5URUdFUiBOT1QgTlVMTCwKICAgICAgICAgICAgICAgIHJlbWluZGVyX3NlbnQgSU5URUdFUiBERUZBVUxUIDAsCiAgICAgICAgICAgICAgICBkdWVfc2VudCBJTlRFR0VSIERFRkFVTFQgMCwKICAgICAgICAgICAgICAgIGNvbXBsZXRlZCBJTlRFR0VSIERFRkFVTFQgMAogICAgICAgICAgICApCiAgICAgICAgIiIiKQoKIyAtLS0tLS0tLS0tLS0tLS0tIEJPVCBTRVRVUCAtLS0tLS0tLS0tLS0tLS0tCgppbnRlbnRzID0gZGlzY29yZC5JbnRlbnRzLmRlZmF1bHQoKQoKY2xhc3MgTU9NQm90KGNvbW1hbmRzLkJvdCk6CgogICAgYXN5bmMgZGVmIHNldHVwX2hvb2soc2VsZik6CiAgICAgICAgaW5pdF9kYXRhYmFzZSgpCgogICAgICAgIGlmIEdVSUxEX0lEOgogICAgICAgICAgICBndWlsZCA9IGRpc2NvcmQuT2JqZWN0KGlkPUdVSUxEX0lEKQoKICAgICAgICAgICAgc2VsZi50cmVlLmNvcHlfZ2xvYmFsX3RvKGd1aWxkPWd1aWxkKQogICAgICAgICAgICBhd2FpdCBzZWxmLnRyZWUuc3luYyhndWlsZD1ndWlsZCkKCiAgICAgICAgICAgIHByaW50KCJHdWlsZCBzbGFzaCBjb21tYW5kcyBzeW5jaHJvbml6ZWQuIikKCiAgICAgICAgZWxzZToKICAgICAgICAgICAgYXdhaXQgc2VsZi50cmVlLnN5bmMoKQogICAgICAgICAgICBwcmludCgiR2xvYmFsIHNsYXNoIGNvbW1hbmRzIHN5bmNocm9uaXplZC4iKQoKYm90ID0gTU9NQm90KAogICAgY29tbWFuZF9wcmVmaXg9IiEiLAogICAgaW50ZW50cz1pbnRlbnRzCikKCiMgLS0tLS0tLS0tLS0tLS0tLSBTRUNVUklUWSAtLS0tLS0tLS0tLS0tLS0tCgpkZWYgb3duZXJfb25seShpbnRlcmFjdGlvbjogZGlzY29yZC5JbnRlcmFjdGlvbik6CiAgICByZXR1cm4gKAogICAgICAgIE9XTkVSX0lEICE9IDAKICAgICAgICBhbmQgaW50ZXJhY3Rpb24udXNlci5pZCA9PSBPV05FUl9JRAogICAgKQoKIyAtLS0tLS0tLS0tLS0tLS0tIFNUQVJUVVAgLS0tLS0tLS0tLS0tLS0tLQoKQGJvdC5ldmVudAphc3luYyBkZWYgb25fcmVhZHkoKToKCiAgICBwcmludCgiLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIikKICAgIHByaW50KCIgICAgICAgTS5PLk0uIFNZU1RFTSBPTkxJTkUiKQogICAgcHJpbnQoIi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSIpCiAgICBwcmludChmIkJvdDoge2JvdC51c2VyfSIpCiAgICBwcmludCgiTWFuYWdlbWVudCBPZiBNaXNzaW5nIEFzc2lnbm1lbnRzIikKICAgIHByaW50KCJTdGF0dXM6IE9wZXJhdGlvbmFsIikKICAgIHByaW50KCItLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0iKQoKICAgIGlmIG5vdCByZW1pbmRlcl9zY2hlZHVsZXIuaXNfcnVubmluZygpOgogICAgICAgIHJlbWluZGVyX3NjaGVkdWxlci5zdGFydCgpCgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ09NTUFORCAxOiBBREQgSE9NRVdPUksKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKQGJvdC50cmVlLmNvbW1hbmQoCiAgICBuYW1lPSJhZGRob21ld29yayIsCiAgICBkZXNjcmlwdGlvbj0iUmVnaXN0ZXIgYSBuZXcgaG9tZXdvcmsgYXNzaWdubWVudC4iCikKQGFwcF9jb21tYW5kcy5jaGVjayhvd25lcl9vbmx5KQpAYXBwX2NvbW1hbmRzLmRlc2NyaWJlKAogICAgc3ViamVjdD0iU3ViamVjdCBuYW1lIiwKICAgIGRlc2NyaXB0aW9uPSJIb21ld29yayBpbnN0cnVjdGlvbnMiLAogICAgZGVhZGxpbmU9IllZWVktTU0tREQgSEg6TU0gKE15YW5tYXIgdGltZSkiCikKYXN5bmMgZGVmIGFkZGhvbWV3b3JrKAogICAgaW50ZXJhY3Rpb246IGRpc2NvcmQuSW50ZXJhY3Rpb24sCiAgICBzdWJqZWN0OiBzdHIsCiAgICBkZXNjcmlwdGlvbjogc3RyLAogICAgZGVhZGxpbmU6IHN0cgopOgoKICAgIHRyeToKICAgICAgICBkdWUgPSBkYXRldGltZS5zdHJwdGltZSgKICAgICAgICAgICAgZGVhZGxpbmUsCiAgICAgICAgICAgICIlWS0lbS0lZCAlSDolTSIKICAgICAgICApLnJlcGxhY2UodHppbmZvPU1ZQU5NQVJfVFopCgogICAgZXhjZXB0IFZhbHVlRXJyb3I6CgogICAgICAgIGF3YWl0IGludGVyYWN0aW9uLnJlc3BvbnNlLnNlbmRfbWVzc2FnZSgKICAgICAgICAgICAgIkludmFsaWQgZGF0ZSBmb3JtYXQuIFVzZSBZWVlZLU1NLUREIEhIOk1NLiIsCiAgICAgICAgICAgIGVwaGVtZXJhbD1UcnVlCiAgICAgICAgKQogICAgICAgIHJldHVybgoKICAgIGlmIGR1ZSA8PSBkYXRldGltZS5ub3coTVlBTk1BUl9UWik6CgogICAgICAgIGF3YWl0IGludGVyYWN0aW9uLnJlc3BvbnNlLnNlbmRfbWVzc2FnZSgKICAgICAgICAgICAgIlRoYXQgZGVhZGxpbmUgaGFzIGFscmVhZHkgcGFzc2VkLiAiCiAgICAgICAgICAgICJUaW1lIHRyYXZlbCBpcyBub3QgY3VycmVudGx5IHN1cHBvcnRlZC4iLAogICAgICAgICAgICBlcGhlbWVyYWw9VHJ1ZQogICAgICAgICkKICAgICAgICByZXR1cm4KCiAgICBpZiBub3QgaW50ZXJhY3Rpb24uZ3VpbGQgb3Igbm90IGludGVyYWN0aW9uLmNoYW5uZWw6CgogICAgICAgIGF3YWl0IGludGVyYWN0aW9uLnJlc3BvbnNlLnNlbmRfbWVzc2FnZSgKICAgICAgICAgICAgIlBsZWFzZSB1c2UgdGhpcyBjb21tYW5kIGluc2lkZSB0aGUgY2xhc3Mgc2VydmVyLiIsCiAgICAgICAgICAgIGVwaGVtZXJhbD1UcnVlCiAgICAgICAgKQogICAgICAgIHJldHVybgoKICAgIHdpdGggc3FsaXRlMy5jb25uZWN0KERCX1BBVEgpIGFzIGRiOgoKICAgICAgICBjdXJzb3IgPSBkYi5leGVjdXRlKCIiIgogICAgICAgICAgICBJTlNFUlQgSU5UTyBob21ld29yawogICAgICAgICAgICAoc3ViamVjdCwgZGVzY3JpcHRpb24sIGRlYWRsaW5lLCBjaGFubmVsX2lkKQogICAgICAgICAgICBWQUxVRVMgKD8sID8sID8sID8pCiAgICAgICAgIiIiLCAoCiAgICAgICAgICAgIHN1YmplY3QsCiAgICAgICAgICAgIGRlc2NyaXB0aW9uLAogICAgICAgICAgICBkdWUuaXNvZm9ybWF0KCksCiAgICAgICAgICAgIGludGVyYWN0aW9uLmNoYW5uZWwuaWQKICAgICAgICApKQoKICAgICAgICBhc3NpZ25tZW50X2lkID0gY3Vyc29yLmxhc3Ryb3dpZAoKICAgIGVtYmVkID0gZGlzY29yZC5FbWJlZCgKICAgICAgICB0aXRsZT0iTkVXIEhPTUVXT1JLIEFTU0lHTk1FTlQiLAogICAgICAgIGRlc2NyaXB0aW9uPWRlc2NyaXB0aW9uLAogICAgICAgIGNvbG9yPWRpc2NvcmQuQ29sb3IuYmx1ZSgpCiAgICApCgogICAgZW1iZWQuYWRkX2ZpZWxkKAogICAgICAgIG5hbWU9IlN1YmplY3QiLAogICAgICAgIHZhbHVlPXN1YmplY3QsCiAgICAgICAgaW5saW5lPVRydWUKICAgICkKCiAgICBlbWJlZC5hZGRfZmllbGQoCiAgICAgICAgbmFtZT0iRGVhZGxpbmUiLAogICAgICAgIHZhbHVlPWR1ZS5zdHJmdGltZSgiJWQgJUIgJVksICVJOiVNICVwIiksCiAgICAgICAgaW5saW5lPVRydWUKICAgICkKCiAgICBlbWJlZC5hZGRfZmllbGQoCiAgICAgICAgbmFtZT0iQXNzaWdubWVudCBJRCIsCiAgICAgICAgdmFsdWU9c3RyKGFzc2lnbm1lbnRfaWQpLAogICAgICAgIGlubGluZT1GYWxzZQogICAgKQoKICAgIGVtYmVkLnNldF9mb290ZXIoCiAgICAgICAgdGV4dD0iTS5PLk0uIHwgTWFuYWdlbWVudCBPZiBNaXNzaW5nIEFzc2lnbm1lbnRzIgogICAgKQoKICAgIGF3YWl0IGludGVyYWN0aW9uLmNoYW5uZWwuc2VuZChlbWJlZD1lbWJlZCkKCiAgICBhd2FpdCBpbnRlcmFjdGlvbi5yZXNwb25zZS5zZW5kX21lc3NhZ2UoCiAgICAgICAgZiJBc3NpZ25tZW50ICN7YXNzaWdubWVudF9pZH0gc3VjY2Vzc2Z1bGx5IHJlZ2lzdGVyZWQuIiwKICAgICAgICBlcGhlbWVyYWw9VHJ1ZQogICAgKQoKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQojIENPTU1BTkQgMjogVklFVyBIT01FV09SSwojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgpAYm90LnRyZWUuY29tbWFuZCgKICAgIG5hbWU9ImhvbWV3b3JrIiwKICAgIGRlc2NyaXB0aW9uPSJWaWV3IGFsbCB1bmZpbmlzaGVkIGhvbWV3b3JrLiIKKQphc3luYyBkZWYgaG9tZXdvcmsoaW50ZXJhY3Rpb246IGRpc2NvcmQuSW50ZXJhY3Rpb24pOgoKICAgIHdpdGggc3FsaXRlMy5jb25uZWN0KERCX1BBVEgpIGFzIGRiOgoKICAgICAgICByb3dzID0gZGIuZXhlY3V0ZSgiIiIKICAgICAgICAgICAgU0VMRUNUIGlkLCBzdWJqZWN0LCBkZXNjcmlwdGlvbiwgZGVhZGxpbmUKICAgICAgICAgICAgRlJPTSBob21ld29yawogICAgICAgICAgICBXSEVSRSBjb21wbGV0ZWQgPSAwCiAgICAgICAgICAgIE9SREVSIEJZIGRlYWRsaW5lIEFTQwogICAgICAgICIiIikuZmV0Y2hhbGwoKQoKICAgIGlmIG5vdCByb3dzOgoKICAgICAgICBhd2FpdCBpbnRlcmFjdGlvbi5yZXNwb25zZS5zZW5kX21lc3NhZ2UoCiAgICAgICAgICAgICJObyB1bmZpbmlzaGVkIGhvbWV3b3JrIGZvdW5kLlxuIgogICAgICAgICAgICAiRWl0aGVyIGV2ZXJ5b25lIGlzIHByb2R1Y3RpdmUgb3Igc29tZXRoaW5nIGlzIHdyb25nLiIsCiAgICAgICAgKQogICAgICAgIHJldHVybgoKICAgIGVtYmVkID0gZGlzY29yZC5FbWJlZCgKICAgICAgICB0aXRsZT0iTS5PLk0uIHwgSE9NRVdPUksgUkVHSVNURVIiLAogICAgICAgIGNvbG9yPWRpc2NvcmQuQ29sb3IuYmx1ZSgpCiAgICApCgogICAgZm9yIHJvdyBpbiByb3dzWzoxMF06CgogICAgICAgIGFzc2lnbm1lbnRfaWQsIHN1YmplY3QsIGRlc2NyaXB0aW9uLCBkZWFkbGluZSA9IHJvdwoKICAgICAgICBkdWUgPSBkYXRldGltZS5mcm9taXNvZm9ybWF0KGRlYWRsaW5lKQoKICAgICAgICBlbWJlZC5hZGRfZmllbGQoCiAgICAgICAgICAgIG5hbWU9ZiIje2Fzc2lnbm1lbnRfaWR9IHwge3N1YmplY3R9IiwKICAgICAgICAgICAgdmFsdWU9KAogICAgICAgICAgICAgICAgZiJ7ZGVzY3JpcHRpb25bOjMwMF19XG4iCiAgICAgICAgICAgICAgICBmIkRlYWRsaW5lOiB7ZHVlLnN0cmZ0aW1lKCclZCAlYiAlWSwgJUk6JU0gJXAnKX0iCiAgICAgICAgICAgICksCiAgICAgICAgICAgIGlubGluZT1GYWxzZQogICAgICAgICkKCiAgICBlbWJlZC5zZXRfZm9vdGVyKAogICAgICAgIHRleHQ9ZiJTaG93aW5nIHttaW4obGVuKHJvd3MpLCAxMCl9IG9mIHtsZW4ocm93cyl9IGFzc2lnbm1lbnRzLiIKICAgICkKCiAgICBhd2FpdCBpbnRlcmFjdGlvbi5yZXNwb25zZS5zZW5kX21lc3NhZ2UoZW1iZWQ9ZW1iZWQpCgojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiMgQ09NTUFORCAzOiBVUENPTUlORyBERUFETElORVMKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKQGJvdC50cmVlLmNvbW1hbmQoCiAgICBuYW1lPSJ1cGNvbWluZyIsCiAgICBkZXNjcmlwdGlvbj0iVmlldyB1cGNvbWluZyBob21ld29yayBkZWFkbGluZXMuIgopCmFzeW5jIGRlZiB1cGNvbWluZyhpbnRlcmFjdGlvbjogZGlzY29yZC5JbnRlcmFjdGlvbik6CgogICAgd2l0aCBzcWxpdGUzLmNvbm5lY3QoREJfUEFUSCkgYXMgZGI6CgogICAgICAgIHJvd3MgPSBkYi5leGVjdXRlKCIiIgogICAgICAgICAgICBTRUxFQ1QgaWQsIHN1YmplY3QsIGRlYWRsaW5lCiAgICAgICAgICAgIEZST00gaG9tZXdvcmsKICAgICAgICAgICAgV0hFUkUgY29tcGxldGVkID0gMAogICAgICAgICAgICBPUkRFUiBCWSBkZWFkbGluZSBBU0MKICAgICAgICAgICAgTElNSVQgMTAKICAgICAgICAiIiIpLmZldGNoYWxsKCkKCiAgICBpZiBub3Qgcm93czoKCiAgICAgICAgYXdhaXQgaW50ZXJhY3Rpb24ucmVzcG9uc2Uuc2VuZF9tZXNzYWdlKAogICAgICAgICAgICAiTm8gdXBjb21pbmcgZGVhZGxpbmVzLiBFbmpveSB0aGUgcGVhY2Ugd2hpbGUgaXQgbGFzdHMuIgogICAgICAgICkKICAgICAgICByZXR1cm4KCiAgICBlbWJlZCA9IGRpc2NvcmQuRW1iZWQoCiAgICAgICAgdGl0bGU9IlVQQ09NSU5HIERFQURMSU5FUyIsCiAgICAgICAgY29sb3I9ZGlzY29yZC5Db2xvci5vcmFuZ2UoKQogICAgKQoKICAgIGZvciBhc3NpZ25tZW50X2lkLCBzdWJqZWN0LCBkZWFkbGluZSBpbiByb3dzOgoKICAgICAgICBkdWUgPSBkYXRldGltZS5mcm9taXNvZm9ybWF0KGRlYWRsaW5lKQoKICAgICAgICBlbWJlZC5hZGRfZmllbGQoCiAgICAgICAgICAgIG5hbWU9ZiIje2Fzc2lnbm1lbnRfaWR9IHwge3N1YmplY3R9IiwKICAgICAgICAgICAgdmFsdWU9ZHVlLnN0cmZ0aW1lKCIlZCAlQiAlWSwgJUk6JU0gJXAiKSwKICAgICAgICAgICAgaW5saW5lPUZhbHNlCiAgICAgICAgKQoKICAgIGF3YWl0IGludGVyYWN0aW9uLnJlc3BvbnNlLnNlbmRfbWVzc2FnZShlbWJlZD1lbWJlZCkKCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KIyBDT01NQU5EIDQ6IE1BUksgSE9NRVdPUksgQ09NUExFVEVECiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCkBib3QudHJlZS5jb21tYW5kKAogICAgbmFtZT0iY29tcGxldGVkIiwKICAgIGRlc2NyaXB0aW9uPSJNYXJrIGhvbWV3b3JrIGFzIGNvbXBsZXRlZC4iCikKQGFwcF9jb21tYW5kcy5jaGVjayhvd25lcl9vbmx5KQphc3luYyBkZWYgY29tcGxldGVkKAogICAgaW50ZXJhY3Rpb246IGRpc2NvcmQuSW50ZXJhY3Rpb24sCiAgICBhc3NpZ25tZW50X2lkOiBpbnQKKToKCiAgICB3aXRoIHNxbGl0ZTMuY29ubmVjdChEQl9QQVRIKSBhcyBkYjoKCiAgICAgICAgY3Vyc29yID0gZGIuZXhlY3V0ZSgiIiIKICAgICAgICAgICAgVVBEQVRFIGhvbWV3b3JrCiAgICAgICAgICAgIFNFVCBjb21wbGV0ZWQgPSAxCiAgICAgICAgICAgIFdIRVJFIGlkID0gPyBBTkQgY29tcGxldGVkID0gMAogICAgICAgICIiIiwgKGFzc2lnbm1lbnRfaWQsKSkKCiAgICBpZiBjdXJzb3Iucm93Y291bnQ6CgogICAgICAgIG1lc3NhZ2UgPSAoCiAgICAgICAgICAgIGYiQXNzaWdubWVudCAje2Fzc2lnbm1lbnRfaWR9IG1hcmtlZCBhcyBjb21wbGV0ZWQuXG4iCiAgICAgICAgICAgICJNLk8uTS4gaXMgdGVtcG9yYXJpbHkgaW1wcmVzc2VkLiIKICAgICAgICApCgogICAgZWxzZToKCiAgICAgICAgbWVzc2FnZSA9ICgKICAgICAgICAgICAgIkFzc2lnbm1lbnQgbm90IGZvdW5kIG9yIGFscmVhZHkgY29tcGxldGVkLiIKICAgICAgICApCgogICAgYXdhaXQgaW50ZXJhY3Rpb24ucmVzcG9uc2Uuc2VuZF9tZXNzYWdlKAogICAgICAgIG1lc3NhZ2UsCiAgICAgICAgZXBoZW1lcmFsPVRydWUKICAgICkKCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KIyBDT01NQU5EIDU6IERFTEVURSBIT01FV09SSwojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgpAYm90LnRyZWUuY29tbWFuZCgKICAgIG5hbWU9ImRlbGV0ZWhvbWV3b3JrIiwKICAgIGRlc2NyaXB0aW9uPSJEZWxldGUgYSBob21ld29yayBhc3NpZ25tZW50LiIKKQpAYXBwX2NvbW1hbmRzLmNoZWNrKG93bmVyX29ubHkpCmFzeW5jIGRlZiBkZWxldGVob21ld29yaygKICAgIGludGVyYWN0aW9uOiBkaXNjb3JkLkludGVyYWN0aW9uLAogICAgYXNzaWdubWVudF9pZDogaW50Cik6CgogICAgd2l0aCBzcWxpdGUzLmNvbm5lY3QoREJfUEFUSCkgYXMgZGI6CgogICAgICAgIGN1cnNvciA9IGRiLmV4ZWN1dGUoIiIiCiAgICAgICAgICAgIERFTEVURSBGUk9NIGhvbWV3b3JrCiAgICAgICAgICAgIFdIRVJFIGlkID0gPwogICAgICAgICIiIiwgKGFzc2lnbm1lbnRfaWQsKSkKCiAgICBpZiBjdXJzb3Iucm93Y291bnQ6CgogICAgICAgIG1lc3NhZ2UgPSBmIkFzc2lnbm1lbnQgI3thc3NpZ25tZW50X2lkfSBkZWxldGVkLiIKCiAgICBlbHNlOgoKICAgICAgICBtZXNzYWdlID0gIkFzc2lnbm1lbnQgbm90IGZvdW5kLiIKCiAgICBhd2FpdCBpbnRlcmFjdGlvbi5yZXNwb25zZS5zZW5kX21lc3NhZ2UoCiAgICAgICAgbWVzc2FnZSwKICAgICAgICBlcGhlbWVyYWw9VHJ1ZQogICAgKQoKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQojIEFVVE9NQVRJQyBSRU1JTkRFUiBTWVNURU0KIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKQHRhc2tzLmxvb3Aoc2Vjb25kcz02MCkKYXN5bmMgZGVmIHJlbWluZGVyX3NjaGVkdWxlcigpOgoKICAgIG5vdyA9IGRhdGV0aW1lLm5vdyhNWUFOTUFSX1RaKQoKICAgIHdpdGggc3FsaXRlMy5jb25uZWN0KERCX1BBVEgpIGFzIGRiOgoKICAgICAgICByb3dzID0gZGIuZXhlY3V0ZSgiIiIKICAgICAgICAgICAgU0VMRUNUIGlkLCBzdWJqZWN0LCBkZWFkbGluZSwgY2hhbm5lbF9pZCwKICAgICAgICAgICAgICAgICAgIHJlbWluZGVyX3NlbnQsIGR1ZV9zZW50CiAgICAgICAgICAgIEZST00gaG9tZXdvcmsKICAgICAgICAgICAgV0hFUkUgY29tcGxldGVkID0gMAogICAgICAgICIiIikuZmV0Y2hhbGwoKQoKICAgIGZvciByb3cgaW4gcm93czoKCiAgICAgICAgKAogICAgICAgICAgICBhc3NpZ25tZW50X2lkLAogICAgICAgICAgICBzdWJqZWN0LAogICAgICAgICAgICBkZWFkbGluZSwKICAgICAgICAgICAgY2hhbm5lbF9pZCwKICAgICAgICAgICAgcmVtaW5kZXJfc2VudCwKICAgICAgICAgICAgZHVlX3NlbnQKICAgICAgICApID0gcm93CgogICAgICAgIGR1ZSA9IGRhdGV0aW1lLmZyb21pc29mb3JtYXQoZGVhZGxpbmUpCgogICAgICAgIGNoYW5uZWwgPSBib3QuZ2V0X2NoYW5uZWwoY2hhbm5lbF9pZCkKCiAgICAgICAgaWYgY2hhbm5lbCBpcyBOb25lOgoKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgY2hhbm5lbCA9IGF3YWl0IGJvdC5mZXRjaF9jaGFubmVsKGNoYW5uZWxfaWQpCgogICAgICAgICAgICBleGNlcHQgZGlzY29yZC5IVFRQRXhjZXB0aW9uOgogICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgIyAyNC1IT1VSIFJFTUlOREVSCgogICAgICAgIGlmICgKICAgICAgICAgICAgbm90IHJlbWluZGVyX3NlbnQKICAgICAgICAgICAgYW5kIG5vdyA+PSBkdWUgLSB0aW1lZGVsdGEoaG91cnM9MjQpCiAgICAgICAgICAgIGFuZCBub3cgPCBkdWUKICAgICAgICApOgoKICAgICAgICAgICAgdHJ5OgoKICAgICAgICAgICAgICAgIGF3YWl0IGNoYW5uZWwuc2VuZCgKICAgICAgICAgICAgICAgICAgICBmIkBldmVyeW9uZSAqKk0uTy5NLiB8IDI0LUhPVVIgV0FSTklORyoqXG5cbiIKICAgICAgICAgICAgICAgICAgICBmIlN1YmplY3Q6IHtzdWJqZWN0fVxuIgogICAgICAgICAgICAgICAgICAgIGYiQXNzaWdubWVudDogI3thc3NpZ25tZW50X2lkfVxuIgogICAgICAgICAgICAgICAgICAgIGYiRGVhZGxpbmU6IHtkdWUuc3RyZnRpbWUoJyVkICVCICVZLCAlSTolTSAlcCcpfVxuXG4iCiAgICAgICAgICAgICAgICAgICAgIllvdXIgaG9tZXdvcmsgaXMgZHVlIHdpdGhpbiAyNCBob3Vycy5cbiIKICAgICAgICAgICAgICAgICAgICAiUHJvY3Jhc3RpbmF0aW9uIGlzIG5vdCBhIHN1Ym1pc3Npb24gbWV0aG9kLiIKICAgICAgICAgICAgICAgICkKCiAgICAgICAgICAgICAgICB3aXRoIHNxbGl0ZTMuY29ubmVjdChEQl9QQVRIKSBhcyBkYjoKCiAgICAgICAgICAgICAgICAgICAgZGIuZXhlY3V0ZSgiIiIKICAgICAgICAgICAgICAgICAgICAgICAgVVBEQVRFIGhvbWV3b3JrCiAgICAgICAgICAgICAgICAgICAgICAgIFNFVCByZW1pbmRlcl9zZW50ID0gMQogICAgICAgICAgICAgICAgICAgICAgICBXSEVSRSBpZCA9ID8KICAgICAgICAgICAgICAgICAgICAiIiIsIChhc3NpZ25tZW50X2lkLCkpCgogICAgICAgICAgICBleGNlcHQgZGlzY29yZC5IVFRQRXhjZXB0aW9uOgogICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgIyBERUFETElORSBOT1RJRklDQVRJT04KCiAgICAgICAgaWYgbm90IGR1ZV9zZW50IGFuZCBub3cgPj0gZHVlOgoKICAgICAgICAgICAgdHJ5OgoKICAgICAgICAgICAgICAgIGF3YWl0IGNoYW5uZWwuc2VuZCgKICAgICAgICAgICAgICAgICAgICBmIkBldmVyeW9uZSAqKk0uTy5NLiB8IERFQURMSU5FIEFMRVJUKipcblxuIgogICAgICAgICAgICAgICAgICAgIGYiWW91ciB7c3ViamVjdH0gaG9tZXdvcmsgIgogICAgICAgICAgICAgICAgICAgIGYiKEFzc2lnbm1lbnQgI3thc3NpZ25tZW50X2lkfSkgaXMgbm93IGR1ZS5cblxuIgogICAgICAgICAgICAgICAgICAgICJJIHNpbmNlcmVseSBob3BlIHlvdSBhcmUgcHJlcGFyZWQuIgogICAgICAgICAgICAgICAgKQoKICAgICAgICAgICAgICAgIHdpdGggc3FsaXRlMy5jb25uZWN0KERCX1BBVEgpIGFzIGRiOgoKICAgICAgICAgICAgICAgICAgICBkYi5leGVjdXRlKCIiIgogICAgICAgICAgICAgICAgICAgICAgICBVUERBVEUgaG9tZXdvcmsKICAgICAgICAgICAgICAgICAgICAgICAgU0VUIGR1ZV9zZW50ID0gMQogICAgICAgICAgICAgICAgICAgICAgICBXSEVSRSBpZCA9ID8KICAgICAgICAgICAgICAgICAgICAiIiIsIChhc3NpZ25tZW50X2lkLCkpCgogICAgICAgICAgICBleGNlcHQgZGlzY29yZC5IVFRQRXhjZXB0aW9uOgogICAgICAgICAgICAgICAgY29udGludWUKCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KIyBFUlJPUiBIQU5ETElORwojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgpAYm90LnRyZWUuZXJyb3IKYXN5bmMgZGVmIG9uX2FwcF9jb21tYW5kX2Vycm9yKAogICAgaW50ZXJhY3Rpb246IGRpc2NvcmQuSW50ZXJhY3Rpb24sCiAgICBlcnJvcjogYXBwX2NvbW1hbmRzLkFwcENvbW1hbmRFcnJvcgopOgoKICAgIGlmIGlzaW5zdGFuY2UoZXJyb3IsIGFwcF9jb21tYW5kcy5DaGVja0ZhaWx1cmUpOgoKICAgICAgICBtZXNzYWdlID0gKAogICAgICAgICAgICAiQUNDRVNTIERFTklFRC5cbiIKICAgICAgICAgICAgIk0uTy5NLiBvbmx5IGFjY2VwdHMgYWRtaW5pc3RyYXRpdmUgY29tbWFuZHMgIgogICAgICAgICAgICAiZnJvbSBoZXIgZGVzaWduYXRlZCBvd25lci4iCiAgICAgICAgKQoKICAgIGVsc2U6CgogICAgICAgIHByaW50KGYiQ29tbWFuZCBlcnJvcjoge2Vycm9yfSIpCgogICAgICAgIG1lc3NhZ2UgPSAoCiAgICAgICAgICAgICJBbiBpbnRlcm5hbCBlcnJvciBvY2N1cnJlZC4gIgogICAgICAgICAgICAiQ2hlY2sgdGhlIFB5dGhvbiB0ZXJtaW5hbC4iCiAgICAgICAgKQoKICAgIGlmIGludGVyYWN0aW9uLnJlc3BvbnNlLmlzX2RvbmUoKToKCiAgICAgICAgYXdhaXQgaW50ZXJhY3Rpb24uZm9sbG93dXAuc2VuZCgKICAgICAgICAgICAgbWVzc2FnZSwKICAgICAgICAgICAgZXBoZW1lcmFsPVRydWUKICAgICAgICApCgogICAgZWxzZToKCiAgICAgICAgYXdhaXQgaW50ZXJhY3Rpb24ucmVzcG9uc2Uuc2VuZF9tZXNzYWdlKAogICAgICAgICAgICBtZXNzYWdlLAogICAgICAgICAgICBlcGhlbWVyYWw9VHJ1ZQogICAgICAgICkKCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KIyBMQVVOQ0ggU1lTVEVNCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCmlmIG5vdCBUT0tFTjoKICAgIHJhaXNlIFJ1bnRpbWVFcnJvcigiRElTQ09SRF9UT0tFTiBtaXNzaW5nIGZyb20gLmVudiIpCgppZiBPV05FUl9JRCA9PSAwOgogICAgcmFpc2UgUnVudGltZUVycm9yKCJPV05FUl9JRCBtaXNzaW5nIGZyb20gLmVudiIpCgpwcmludCgiSW5pdGlhbGl6aW5nIE0uTy5NLiBzeXN0ZW1zLi4uIikKCmJvdC5ydW4oVE9LRU4p"))
+import os
+import sqlite3
+from datetime import datetime, timedelta, timezone
+
+import discord
+from discord import app_commands
+from discord.ext import commands, tasks
+from dotenv import load_dotenv
+
+# =====================================================
+# M.O.M. - MANAGEMENT OF MISSING ASSIGNMENTS
+# Version 1.1 - Night-before reminders with @everyone
+# =====================================================
+
+# ---------------- CONFIGURATION ----------------
+
+load_dotenv()
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+OWNER_ID = int(os.getenv("OWNER_ID", "0"))
+GUILD_ID = int(os.getenv("GUILD_ID", "0"))
+
+MYANMAR_TZ = timezone(timedelta(hours=6, minutes=30))
+
+DB_PATH = "database/homework.db"
+
+os.makedirs("database", exist_ok=True)
+
+# ---------------- DATABASE ----------------
+
+def init_database():
+    with sqlite3.connect(DB_PATH) as db:
+        db.execute("""
+            CREATE TABLE IF NOT EXISTS homework (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                subject TEXT NOT NULL,
+                description TEXT NOT NULL,
+                deadline TEXT NOT NULL,
+                channel_id INTEGER NOT NULL,
+                reminder_sent INTEGER DEFAULT 0,
+                due_sent INTEGER DEFAULT 0,
+                completed INTEGER DEFAULT 0
+            )
+        """)
+
+# ---------------- BOT SETUP ----------------
+
+intents = discord.Intents.default()
+
+class MOMBot(commands.Bot):
+
+    async def setup_hook(self):
+        init_database()
+
+        if GUILD_ID:
+            guild = discord.Object(id=GUILD_ID)
+
+            self.tree.copy_global_to(guild=guild)
+            await self.tree.sync(guild=guild)
+
+            print("Guild slash commands synchronized.")
+
+        else:
+            await self.tree.sync()
+            print("Global slash commands synchronized.")
+
+bot = MOMBot(
+    command_prefix="!",
+    intents=intents
+)
+
+# ---------------- SECURITY ----------------
+
+def owner_only(interaction: discord.Interaction):
+    return (
+        OWNER_ID != 0
+        and interaction.user.id == OWNER_ID
+    )
+
+# ---------------- STARTUP ----------------
+
+@bot.event
+async def on_ready():
+
+    print("------------------------------------")
+    print("       M.O.M. SYSTEM ONLINE")
+    print("------------------------------------")
+    print(f"Bot: {bot.user}")
+    print("Management Of Missing Assignments")
+    print("Status: Operational")
+    print("------------------------------------")
+
+    if not reminder_scheduler.is_running():
+        reminder_scheduler.start()
+
+# =====================================================
+# COMMAND 1: ADD HOMEWORK
+# =====================================================
+
+@bot.tree.command(
+    name="addhomework",
+    description="Register a new homework assignment."
+)
+@app_commands.check(owner_only)
+@app_commands.describe(
+    subject="Subject name",
+    description="Homework instructions",
+    deadline="YYYY-MM-DD HH:MM (Myanmar time)"
+)
+async def addhomework(
+    interaction: discord.Interaction,
+    subject: str,
+    description: str,
+    deadline: str
+):
+
+    try:
+        due = datetime.strptime(
+            deadline,
+            "%Y-%m-%d %H:%M"
+        ).replace(tzinfo=MYANMAR_TZ)
+
+    except ValueError:
+
+        await interaction.response.send_message(
+            "Invalid date format. Use YYYY-MM-DD HH:MM.",
+            ephemeral=True
+        )
+        return
+
+    if due <= datetime.now(MYANMAR_TZ):
+
+        await interaction.response.send_message(
+            "That deadline has already passed. "
+            "Time travel is not currently supported.",
+            ephemeral=True
+        )
+        return
+
+    if not interaction.guild or not interaction.channel:
+
+        await interaction.response.send_message(
+            "Please use this command inside the class server.",
+            ephemeral=True
+        )
+        return
+
+    with sqlite3.connect(DB_PATH) as db:
+
+        cursor = db.execute("""
+            INSERT INTO homework
+            (subject, description, deadline, channel_id)
+            VALUES (?, ?, ?, ?)
+        """, (
+            subject,
+            description,
+            due.isoformat(),
+            interaction.channel.id
+        ))
+
+        assignment_id = cursor.lastrowid
+
+    embed = discord.Embed(
+        title="NEW HOMEWORK ASSIGNMENT",
+        description=description,
+        color=discord.Color.blue()
+    )
+
+    embed.add_field(
+        name="Subject",
+        value=subject,
+        inline=True
+    )
+
+    embed.add_field(
+        name="Deadline",
+        value=due.strftime("%d %B %Y, %I:%M %p"),
+        inline=True
+    )
+
+    embed.add_field(
+        name="Assignment ID",
+        value=str(assignment_id),
+        inline=False
+    )
+
+    embed.set_footer(
+        text="M.O.M. | Management Of Missing Assignments"
+    )
+
+    await interaction.channel.send(embed=embed)
+
+    await interaction.response.send_message(
+        f"Assignment #{assignment_id} successfully registered.",
+        ephemeral=True
+    )
+
+# =====================================================
+# COMMAND 2: VIEW HOMEWORK
+# =====================================================
+
+@bot.tree.command(
+    name="homework",
+    description="View all unfinished homework."
+)
+async def homework(interaction: discord.Interaction):
+
+    with sqlite3.connect(DB_PATH) as db:
+
+        rows = db.execute("""
+            SELECT id, subject, description, deadline
+            FROM homework
+            WHERE completed = 0
+            ORDER BY deadline ASC
+        """).fetchall()
+
+    if not rows:
+
+        await interaction.response.send_message(
+            "No unfinished homework found.\n"
+            "Either everyone is productive or something is wrong.",
+        )
+        return
+
+    embed = discord.Embed(
+        title="M.O.M. | HOMEWORK REGISTER",
+        color=discord.Color.blue()
+    )
+
+    for row in rows[:10]:
+
+        assignment_id, subject, description, deadline = row
+
+        due = datetime.fromisoformat(deadline)
+
+        embed.add_field(
+            name=f"#{assignment_id} | {subject}",
+            value=(
+                f"{description[:300]}\n"
+                f"Deadline: {due.strftime('%d %b %Y, %I:%M %p')}"
+            ),
+            inline=False
+        )
+
+    embed.set_footer(
+        text=f"Showing {min(len(rows), 10)} of {len(rows)} assignments."
+    )
+
+    await interaction.response.send_message(embed=embed)
+
+# =====================================================
+# COMMAND 3: UPCOMING DEADLINES
+# =====================================================
+
+@bot.tree.command(
+    name="upcoming",
+    description="View upcoming homework deadlines."
+)
+async def upcoming(interaction: discord.Interaction):
+
+    with sqlite3.connect(DB_PATH) as db:
+
+        rows = db.execute("""
+            SELECT id, subject, deadline
+            FROM homework
+            WHERE completed = 0
+            ORDER BY deadline ASC
+            LIMIT 10
+        """).fetchall()
+
+    if not rows:
+
+        await interaction.response.send_message(
+            "No upcoming deadlines. Enjoy the peace while it lasts."
+        )
+        return
+
+    embed = discord.Embed(
+        title="UPCOMING DEADLINES",
+        color=discord.Color.orange()
+    )
+
+    for assignment_id, subject, deadline in rows:
+
+        due = datetime.fromisoformat(deadline)
+
+        embed.add_field(
+            name=f"#{assignment_id} | {subject}",
+            value=due.strftime("%d %B %Y, %I:%M %p"),
+            inline=False
+        )
+
+    await interaction.response.send_message(embed=embed)
+
+# =====================================================
+# COMMAND 4: MARK HOMEWORK COMPLETED
+# =====================================================
+
+@bot.tree.command(
+    name="completed",
+    description="Mark homework as completed."
+)
+@app_commands.check(owner_only)
+async def completed(
+    interaction: discord.Interaction,
+    assignment_id: int
+):
+
+    with sqlite3.connect(DB_PATH) as db:
+
+        cursor = db.execute("""
+            UPDATE homework
+            SET completed = 1
+            WHERE id = ? AND completed = 0
+        """, (assignment_id,))
+
+    if cursor.rowcount:
+
+        message = (
+            f"Assignment #{assignment_id} marked as completed.\n"
+            "M.O.M. is temporarily impressed."
+        )
+
+    else:
+
+        message = (
+            "Assignment not found or already completed."
+        )
+
+    await interaction.response.send_message(
+        message,
+        ephemeral=True
+    )
+
+# =====================================================
+# COMMAND 5: DELETE HOMEWORK
+# =====================================================
+
+@bot.tree.command(
+    name="deletehomework",
+    description="Delete a homework assignment."
+)
+@app_commands.check(owner_only)
+async def deletehomework(
+    interaction: discord.Interaction,
+    assignment_id: int
+):
+
+    with sqlite3.connect(DB_PATH) as db:
+
+        cursor = db.execute("""
+            DELETE FROM homework
+            WHERE id = ?
+        """, (assignment_id,))
+
+    if cursor.rowcount:
+
+        message = f"Assignment #{assignment_id} deleted."
+
+    else:
+
+        message = "Assignment not found."
+
+    await interaction.response.send_message(
+        message,
+        ephemeral=True
+    )
+
+# =====================================================
+# AUTOMATIC REMINDER SYSTEM
+# =====================================================
+
+@tasks.loop(seconds=60)
+async def reminder_scheduler():
+
+    now = datetime.now(MYANMAR_TZ)
+
+    with sqlite3.connect(DB_PATH) as db:
+
+        rows = db.execute("""
+            SELECT id, subject, deadline, channel_id,
+                   reminder_sent, due_sent
+            FROM homework
+            WHERE completed = 0
+        """).fetchall()
+
+    for row in rows:
+
+        (
+            assignment_id,
+            subject,
+            deadline,
+            channel_id,
+            reminder_sent,
+            due_sent
+        ) = row
+
+        due = datetime.fromisoformat(deadline)
+
+        channel = bot.get_channel(channel_id)
+
+        if channel is None:
+
+            try:
+                channel = await bot.fetch_channel(channel_id)
+
+            except discord.HTTPException:
+                continue
+
+        # NIGHT-BEFORE REMINDER (sent around 8 PM the day before deadline)
+
+        if (
+            not reminder_sent
+            and now.hour >= 20
+            and due.date() == (now + timedelta(days=1)).date()
+        ):
+
+            try:
+
+                await channel.send(
+                    "@everyone\n"
+                    f"**M.O.M. | NIGHT-BEFORE REMINDER**\n\n"
+                    f"Subject: {subject}\n"
+                    f"Assignment: #{assignment_id}\n"
+                    f"Deadline: {due.strftime('%d %B %Y, %I:%M %p')}\n\n"
+                    "Your homework is due tomorrow.\n"
+                    "Get it done before you sleep, not after."
+                )
+
+                with sqlite3.connect(DB_PATH) as db:
+
+                    db.execute("""
+                        UPDATE homework
+                        SET reminder_sent = 1
+                        WHERE id = ?
+                    """, (assignment_id,))
+
+            except discord.HTTPException:
+                continue
+
+        # DEADLINE NOTIFICATION
+
+        if not due_sent and now >= due:
+
+            try:
+
+                await channel.send(
+                    f"**M.O.M. | DEADLINE ALERT**\n\n"
+                    f"Your {subject} homework "
+                    f"(Assignment #{assignment_id}) is now due.\n\n"
+                    "I sincerely hope you are prepared."
+                )
+
+                with sqlite3.connect(DB_PATH) as db:
+
+                    db.execute("""
+                        UPDATE homework
+                        SET due_sent = 1
+                        WHERE id = ?
+                    """, (assignment_id,))
+
+            except discord.HTTPException:
+                continue
+
+# =====================================================
+# ERROR HANDLING
+# =====================================================
+
+@bot.tree.error
+async def on_app_command_error(
+    interaction: discord.Interaction,
+    error: app_commands.AppCommandError
+):
+
+    if isinstance(error, app_commands.CheckFailure):
+
+        message = (
+            "ACCESS DENIED.\n"
+            "M.O.M. only accepts administrative commands "
+            "from her designated owner."
+        )
+
+    else:
+
+        print(f"Command error: {error}")
+
+        message = (
+            "An internal error occurred. "
+            "Check the Python terminal."
+        )
+
+    if interaction.response.is_done():
+
+        await interaction.followup.send(
+            message,
+            ephemeral=True
+        )
+
+    else:
+
+        await interaction.response.send_message(
+            message,
+            ephemeral=True
+        )
+
+# =====================================================
+# LAUNCH SYSTEM
+# =====================================================
+
+if not TOKEN:
+    raise RuntimeError("DISCORD_TOKEN missing from .env")
+
+if OWNER_ID == 0:
+    raise RuntimeError("OWNER_ID missing from .env")
+
+print("Initializing M.O.M. systems...")
+
+bot.run(TOKEN)
